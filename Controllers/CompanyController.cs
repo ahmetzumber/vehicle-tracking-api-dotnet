@@ -117,5 +117,14 @@ namespace Vehicle_System_API.Controllers
         {
             return _context.Companies.Any(e => e.CompanyId == id);
         }
+
+        private void printCompanies()
+        {
+            var companies = _context.Companies.ToList();
+            foreach (var company in companies)
+            {
+                Console.WriteLine(company.CompanyName.ToString());
+            }
+        }
     }
 }
